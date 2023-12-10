@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak1</title>
+</head>
+<body>
+<script>
+function izracunaj(){
+        const unos=prompt("Unesite brojeve odvojene zarezom (npr. 5, 9, 18):");
+         while (unos.indexOf(',')===-1) {
+            unos=prompt("Pogrešan unos. Morate unijeti brojeve odvojene zarezom (npr. 5, 9, 18). Pokušajte ponovno:");
+        }
+        // Razdvajam unesene brojeva na temelju zareza i pretvaram ih u brojeve
+    const brojevi = unos.split(',').map(num => parseInt(num.trim(), 10));
+
+    const aritmeticka = brojevi.reduce((acc, num) => acc + num, 0) / brojevi.length;
+    const geometrijska = Math.pow(brojevi.reduce((acc, num) => acc * num, 1), 1 / brojevi.length);
+
+        document.write("<p>Uneseni brojevi: " + brojevi.join(', ')+"<p/>"); 
+        document.write("<p>Aritmetička sredina: " + aritmeticka+"<p/>");
+        document.write("<p>Geometrijska sredina: " + geometrijska + "<p/>");
+}
+window.onload = izracunaj();
+</script>
+</body>
+</html>

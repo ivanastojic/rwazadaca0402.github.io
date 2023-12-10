@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak9</title>
+<style>
+#zarulja {
+left:100px;
+top:20px;
+width:150px;
+height:150px;
+background-image: url('zarulja_off_2.png'); 
+background-size: cover;
+z-index:1;
+}
+
+#prekidac {
+left:150px;
+top:500px;
+width:150px;
+height:300px;
+background-image: url('prekidac2.png'); 
+z-index:2;
+}
+</style>
+</head>
+<body>
+<div id="zarulja"></div>
+<div id="prekidac" onclick="promijena()"></div>
+</div>
+<script>
+var zaruljaPrikazana=false;
+
+function promijena() {
+    var zarulja1=document.getElementById('zarulja');
+    var prekidac1=document.getElementById('prekidac');
+
+    zaruljaPrikazana = !zaruljaPrikazana;
+
+    if (zaruljaPrikazana) {
+      zarulja1.style.backgroundImage = "url('zarulja_on_2.png')"; 
+      prekidac1.style.backgroundImage = "url('prekidac1.png')"; 
+    } else {
+      zarulja1.style.backgroundImage = "url('zarulja_off_2.png')";
+      prekidac1.style.backgroundImage = "url('prekidac2.png')"; 
+    }
+  }
+</script>
+</body>
+</html>
+
+
+

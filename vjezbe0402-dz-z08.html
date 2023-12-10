@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zadatak8</title>
+</head>
+<body>
+<input type="number" id="broj1" value="">operand1<br/><br/>
+<input type="number" id="broj2" value="">operand2(Operand2 unijeti samo ako je potrebno,operacije sin,cos,tan,ln,log,^2,^3
+ koriste samo jedan operand i oni ce u tom slucaju koristit samo operand1)<br/><br/>
+<input type="button"value="+" onclick="izracun('+')">&nbsp;&nbsp;&nbsp;
+<input type="button" value="-" onclick="izracun('-')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="*" onclick="izracun('*')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="/" onclick="izracun('/')"> &nbsp;&nbsp;&nbsp;<br/><br/>
+<input type="button" value="sin" onclick="izracun('sin')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="cos" onclick="izracun('cos')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="tan" onclick="izracun('tan')"> &nbsp;&nbsp;&nbsp;<br/><br/>
+<input type="button" value="ln" onclick="izracun('ln')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="log" onclick="izracun('log')"> &nbsp;&nbsp;&nbsp;<br/><br/>
+<input type="button" value="^2" onclick="izracun('^2')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="^3" onclick="izracun('^3')"> &nbsp;&nbsp;&nbsp;
+<input type="button" value="^n" onclick="izracun('^n')"> &nbsp;&nbsp;&nbsp;<br/><br/>
+<script>
+  function izracun(operacija){
+    var broj1=parseFloat(document.getElementById("broj1").value);
+    var broj2=parseFloat(document.getElementById("broj2").value);
+    var rezultat;
+
+    if(operacija==='+'){
+        rezultat=broj1+broj2;
+    }
+    else if(operacija==='-'){
+        rezultat=broj1-broj2;
+    }
+    else if(operacija==='*'){
+        rezultat=broj1*broj2;
+    }
+    else if(operacija==='/'){
+        rezultat=broj1/broj2;
+    }
+    else if(operacija==='sin'){
+        rezultat=Math.sin(broj1);
+    }
+    else if(operacija==='cos'){
+        rezultat=Math.cos(broj1);
+    }
+    else if(operacija==='tan'){
+        rezultat=Math.tan(broj1);
+    }
+    else if(operacija==='ln'){
+        rezultat=Math.log(broj1);
+    }
+    else if(operacija==='log'){
+        rezultat=Math.log10(broj1);
+    }
+    else if(operacija==='^2'){
+        rezultat= Math.pow(broj1,2);
+    }
+    if(operacija==='^3'){
+        rezultat= Math.pow(broj1,3);
+    }
+    if(operacija==='^n'){
+        rezultat= Math.pow(broj1,broj2);
+    }
+     alert("Rezultat operacije je:"+rezultat);
+    
+  }
+</script>
+</body>
+</html>

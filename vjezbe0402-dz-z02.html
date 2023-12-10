@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak2</title>
+<style>
+    body{
+       background-color: #FFFFFF;
+    }   
+</style>
+</head>
+<body>
+<input type="button" value="Promjeni pozadinu" onclick="promjena()">
+<p id="boja">Trenutna boja:#FFFFFF</p>
+
+<script>
+    function promjena() {
+        const novaBoja = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+        document.body.style.backgroundColor = novaBoja;
+
+        document.getElementById('boja').innerText = 'Trenutna boja: ' + novaBoja;
+    }
+</script>
+</body>
+</html>

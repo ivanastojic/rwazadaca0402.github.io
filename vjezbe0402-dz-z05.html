@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak5</title>
+</head>
+<body>
+Unesite registarsku oznaku (npr. E04-K-401): 
+<input type="text" id="registarskaOznaka" name="registarskaOznaka" />
+<input type="button" value="Validacija" onclick="validiraj()">
+<script>
+function validiraj() {
+var registarskaOznaka = document.getElementById("registarskaOznaka").value;
+// Regularni izraz za validaciju registarske oznake BiH (npr. E04-K-401)
+var r = /^[A-ZČĆŠĐŽ\d]{1,3}-[A-ZČĆŠĐŽ]{1,2}-\d{1,4}$/;
+
+if (r.test(registarskaOznaka)) {
+    alert("Registarska oznaka je ispravna!");
+          return true;
+    } 
+    else {
+      alert("Registarska oznaka nije ispravna!");
+            return false;
+            }
+        }
+</script>
+</body>
+</html>

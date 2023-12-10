@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zadatak7</title>
+</head>
+<body>
+Unesite dan(1-31) <input type="text" id="dan" value=""><br/><br/>
+Unesite mjesec(1-12)<input type="text" id="mjesec" value=""><br/><br/>
+Unesite godinu(npr.1970) <input type="text" id="godina" value=""><br/><br/>
+<input type="button" value="Izracunaj" onclick="izracun()"> <br/><br/><br/>
+<script>
+  function izracun(){
+  var dan=parseInt(document.getElementById("dan").value);
+  var mjesec=parseInt(document.getElementById("mjesec").value);
+  var godina=parseInt(document.getElementById("godina").value);
+
+  if(isNaN(dan) || isNaN(mjesec) || isNaN(godina)){
+    alert("Nije ispravno unesen datum.Pokusajte ponovno.");
+    return;
+  }
+
+  if(dan<1 || dan>31  || mjesec<1  || mjesec>12){
+    alert("Nije ispravno unesen datum.Pokusajte ponovno.");
+    return;
+  }
+   
+  var danas=new Date();
+  var godine=danas.getFullYear()-godina;
+  if (mjesec>danas.getMonth() + 1 || (mjesec===danas.getMonth()+1  &&  dan>danas.getDate())) {
+      godine--;
+  }
+
+    alert("Imate"+" "+godine+" "+"godina.");
+  }  
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak4</title>
+</head>
+<body>
+Unesite ocjenu (1-5):
+<input type="text" id="ocjena">
+<input type="button" value="Provjeri ocjenu" onclick="prikaz()">
+<p id="Ocjena"></p>
+<script>
+    function prikaz() {
+        const ocjenaa = document.getElementById('ocjena');
+        const ocjena = parseInt(ocjenaa.value, 10);
+        
+        if (isNaN(ocjena) || ocjena < 1 || ocjena > 5) {
+            document.getElementById('Ocjena').textContent = "Unesite ispravnu ocjenu (1-5)!";
+            return;
+        }
+
+        let poruka="Ocjena:";
+
+        if (ocjena === 1) {
+            poruka += "Nedovoljan";
+        } else if (ocjena === 2) {
+            poruka += "Dovoljan";
+        } else if (ocjena === 3) {
+            poruka += "Dobar";
+        } else if (ocjena === 4) {
+            poruka += "Vrlo dobar";
+        } else if (ocjena === 5) {
+            poruka += "Odličan";
+        }
+
+        document.getElementById('Ocjena').textContent = poruka;
+    }
+</script>   
+
+</body>
+</html>

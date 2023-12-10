@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadatak10</title>
+<script>
+    function dodajNoviParagraf() {
+      var noviParagraf = document.createElement("p");
+      noviParagraf.appendChild(document.createTextNode("Novi paragraf teksta"));
+//Nisam bas razumijela ispod kojeg paragrafa se treba dodati, ali ako sam navela pogresan treba samo zamjeniti umjesto location staviti thisLocation u zagradu
+      // Pronalaženje elementa ispod kojeg će se dodati novi paragrafi
+      var lokacija = document.getElementById("location"); 
+
+      // Dodavanje novog paragrafa ispod ciljnog elementa(afterend)
+      lokacija.insertAdjacentElement('afterend', noviParagraf);
+    }
+  </script>
+</head>
+<body>
+  <p><a href="#" onclick="dodajNoviParagraf()">Kliknite ovdje da dodate novi paragraf tekst</a></p>
+  <p id="thisLocation">Novi paragrafi teksta će se pojaviti ispod</p>
+  <p id="location">Ovo je defaultni prvi paragraf teksta</p>
+</body>
+</html>

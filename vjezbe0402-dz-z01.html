@@ -13,9 +13,15 @@ function izracunaj(){
         }
         // Razdvajam unesene brojeva na temelju zareza i pretvaram ih u brojeve
     const brojevi = unos.split(',').map(num => parseInt(num.trim(), 10));
+        var zbroj=0;
+        var produkt=1;
+        for(i=0;i<brojevi.length;i++){
+                zbroj+=brojevi[i];
+                produkt*=brojevi[i];
+        }
 
-    const aritmeticka = brojevi.reduce((acc, num) => acc + num, 0) / brojevi.length;
-    const geometrijska = Math.pow(brojevi.reduce((acc, num) => acc * num, 1), 1 / brojevi.length);
+    const aritmeticka =zbroj/brojevi.length;
+    const geometrijska =Math.sqrt(produkt);
 
         document.write("<p>Uneseni brojevi: " + brojevi.join(', ')+"<p/>"); 
         document.write("<p>Aritmetička sredina: " + aritmeticka+"<p/>");
